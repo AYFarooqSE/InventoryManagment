@@ -23,9 +23,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Middlewares\" />
-    <Folder Include="Dtos\" />
     <Folder Include="Validations\" />
-    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 
 </Project>
