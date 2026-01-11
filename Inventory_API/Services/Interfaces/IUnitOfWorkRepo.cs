@@ -1,6 +1,9 @@
 ﻿namespace Inventory_API.Services.Interfaces
 {
-    public interface IUnitOfWorkRepo
+    public interface IUnitOfWorkRepo : IDisposable
     {
+        ICommonRepo CommonRepo { get; }
+
+        Task<int> SaveChangesAsync();
     }
 }

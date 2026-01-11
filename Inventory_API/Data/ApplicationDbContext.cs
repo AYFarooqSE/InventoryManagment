@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Inventory_API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Inventory_API.Data
 {
@@ -8,5 +9,7 @@ namespace Inventory_API.Data
         {
             
         }
+
+        public DbSet<Customer> Customers { get; set; }
     }
 }

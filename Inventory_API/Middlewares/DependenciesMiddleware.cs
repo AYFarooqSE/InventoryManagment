@@ -18,6 +18,8 @@ namespace Inventory_API.Middlewares
         public static IServiceCollection RegisterDIClasses(this IServiceCollection _Services)
         {
             _Services.AddScoped<IProductRepo, ProductsRepo>();
+            _Services.AddScoped<ICustomersRepo, CustomersRepo>();
+            _Services.AddScoped<IUnitOfWorkRepo, UnitOfWorkRepo>();
             return _Services;
         }
 
