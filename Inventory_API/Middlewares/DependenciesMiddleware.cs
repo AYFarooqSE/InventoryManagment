@@ -1,4 +1,6 @@
 ﻿using Inventory_API.Data;
+using Inventory_API.Services;
+using Inventory_API.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Inventory_API.Middlewares
@@ -11,6 +13,12 @@ namespace Inventory_API.Middlewares
             _Service.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(ConnectionStr));
 
             return _Service;
+        }
+
+        public static IServiceCollection RegisterDIClasses(this IServiceCollection _Services)
+        {
+            _Services.AddScoped<IProductRepo, ProductsRepo>();
+            return _Services;
         }
 
     }

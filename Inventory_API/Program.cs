@@ -1,4 +1,6 @@
+using Inventory_API.Data;
 using Inventory_API.Middlewares;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,11 @@ builder.Services.AddSwaggerGen();
 
 // Dependencies Middleware
 builder.Services.AddConnectionStrin(builder.Configuration);
+builder.Services.RegisterDIClasses();
+
+// Adding Identity.
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false).
+    AddEntityFrameworkStores<ApplicationDbContext>();
 
 var app = builder.Build();
 
